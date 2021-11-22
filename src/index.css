@@ -1,13 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.components {
+  margin: 20px auto;
+  width: 500px;
+}
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+
+.accordion__heading--state {
+  margin-right: 10px;
+}
+
+.accordion__row {
+  margin-bottom: 10px;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgb(94, 12, 12);
+  border-radius: 4px;
+}
+
+button {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(160, 159, 159);
+}
+
+.on {
+  color: yellow;
+}
+
+.off {
+  color: #ccc;
+}
+
+.star {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 26px;
+}
+
+.button {
+  width: 100px;
+  height: 30px;
+  background-color: ghostwhite;
+  border: 1px black solid;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tabs__paragraph {
+  display: block;
+}
+
+.text-align {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.text-align:hover {
+  background-color: rgb(160, 159, 159);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(36px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.editable {
+  min-height: 150px;
+  display: inline-block;
+  width: 100%;
+  border: none;
+  resize: none;
+  overflow: hidden;
+}
+
+.editable:focus {
+  outline: none;
+}
+
+.editable:active {
+  outline: none;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  width: 200px;
+  background: #ccffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dropdown:hover {
+  background-color: #7ce7e7;
+}
+
+.carousel {
+  position: relative;
+  padding-top: 100%;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.carousel__arrow--left {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  background-image: url('http://sadeko.org/wp-content/uploads/intense-cache/icons/plugin/font-awesome/arrow-circle-left.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
+.carousel__arrow--right {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  background-image: url('http://sadeko.org/wp-content/uploads/intense-cache/icons/plugin/font-awesome/arrow-circle-left.svg');
+  transform: rotate(180deg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
+.carousel__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 20px;
+}
+
+.carousel__dots {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, -50%);
+}
+
+.carousel__dot {
+  margin-right: 5px;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 100px;
+  padding: 20px 10px;
+}
+
+.accordion__row {
+  background: #ccffff;
+  cursor: pointer;
+  font-size: 20pt;
+  padding: 16px;
+  width: 100%;
+}
+
+.accordion__row:hover {
+  opacity: 0.7;
+}
+
+.accordion__text {
+  background: #ffffff;
+  padding: 0 16px;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 1s ease-in-out;
+  font-size: 18pt;
+}
+
+#state:checked ~ .accordion__text {
+  max-height: 500px;
+  padding: 16px;
+}
+
+label {
+  width: 100%;
+}
+
+.form__format {
+  width: 478px;
+  margin-top: 10px;
+  padding: 10px;
+  outline: none;
+  margin-right: 20px;
+}
+
+.form__radio {
+  margin-top: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+.form__checkbox {
+  margin-top: 20px;
+  width: 15px;
+  height: 15px;
+  vertical-align: bottom;
+}
+
+.form__error {
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+
+.inline {
+  display: inline;
+}
+
+.popover {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+}
+
+.popover__item {
+  position: absolute;
+  background-color: rgb(71, 5, 5);
+  color: white;
+  padding: 10px;
+  left: 30px;
+}
+
+.helper {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  background-color: rgb(71, 5, 5);
+}
+
+.center {
+  margin: 10px auto 0;
+}
+
+.dropdown__item {
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  width: 200px;
+  background: #ccffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
